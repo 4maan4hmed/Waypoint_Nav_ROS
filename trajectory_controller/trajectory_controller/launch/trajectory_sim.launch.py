@@ -1,7 +1,4 @@
-"""
-Launch file for trajectory controller with TurtleBot3 simulation.
-Place this in: ~/ros2_ws/src/trajectory_controller/launch/trajectory_sim.launch.py
-"""
+
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, ExecuteProcess, RegisterEventHandler
@@ -105,26 +102,6 @@ def generate_launch_description():
         arguments=['-d', rviz_config_path],
         parameters=[{'use_sim_time': use_sim_time}],
         condition=lambda context: LaunchConfiguration('launch_rviz').perform(context) == 'true'
-    )
-    
-    # Optional: Waypoint publisher node (if you have one)
-    waypoint_publisher_node = Node(
-        package='trajectory_controller',
-        executable='waypoint_publisher',
-        name='waypoint_publisher',
-        output='screen',
-        parameters=[{'use_sim_time': use_sim_time}],
-        condition=lambda context: False  # Set to True if you have this node
-    )
-    
-    # Optional: Start a waypoint recording service
-    record_waypoints_node = Node(
-        package='trajectory_controller', 
-        executable='record_waypoints',
-        name='record_waypoints',
-        output='screen',
-        parameters=[{'use_sim_time': use_sim_time}],
-        condition=lambda context: False  # Set to True if you have this node
     )
     
     # Create launch description
