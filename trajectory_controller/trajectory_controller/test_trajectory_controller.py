@@ -24,11 +24,11 @@ def test_path_smoother():
     waypoints = [(0, 0), (1, 0), (2, 0)]
     try:
         smooth_path = PathSmoother.smooth_path(waypoints, num_points=50)
-        print(f"✓ Generated {len(smooth_path)} smooth points")
+        print(f"Success: Generated {len(smooth_path)} smooth points")
         assert len(smooth_path) == 50, "Should generate requested number of points"
-        print("✓ Length check passed")
+        print("Success: Length check passed")
     except Exception as e:
-        print(f"✗ Failed: {e}")
+        print(f"Failed: {e}")
         return False
     
     # Test 2: L-shaped path
@@ -36,30 +36,30 @@ def test_path_smoother():
     waypoints = [(0, 0), (1, 0), (1, 1)]
     try:
         smooth_path = PathSmoother.smooth_path(waypoints, num_points=30)
-        print(f"✓ Generated {len(smooth_path)} smooth points")
+        print(f"Success: Generated {len(smooth_path)} smooth points")
     except Exception as e:
-        print(f"✗ Failed: {e}")
+        print(f"Failed: {e}")
         return False
     
     # Test 3: Error handling - too few waypoints
     print("\nTest 3: Error handling (too few waypoints)")
     try:
         PathSmoother.smooth_path([(0, 0)], num_points=10)
-        print("✗ Should have raised ValueError")
+        print("Failed: Should have raised ValueError")
         return False
     except ValueError as e:
-        print(f"✓ Correctly raised ValueError: {e}")
+        print(f"Success: Correctly raised ValueError: {e}")
     
     # Test 4: Error handling - empty list
     print("\nTest 4: Error handling (empty list)")
     try:
         PathSmoother.smooth_path([], num_points=10)
-        print("✗ Should have raised ValueError")
+        print("Failed: Should have raised ValueError")
         return False
     except ValueError:
-        print("✓ Correctly raised ValueError")
+        print("Success: Correctly raised ValueError")
     
-    print("\n✓ All Path Smoother tests passed!")
+    print("\nSuccess: All Path Smoother tests passed!")
     return True
 
 
@@ -74,24 +74,24 @@ def test_trajectory_generator():
     
     try:
         trajectory = TrajectoryGenerator.generate_trajectory(smooth_path, velocity)
-        print(f"✓ Generated {len(trajectory)} trajectory points")
+        print(f"Success: Generated {len(trajectory)} trajectory points")
         
         # Check format
         assert len(trajectory[0]) == 3, "Each point should have (x, y, t)"
-        print("✓ Trajectory format is correct")
+        print("Success: Trajectory format is correct")
         
         # Check time stamps
         assert trajectory[0][2] == 0.0, "First time should be 0"
         assert trajectory[-1][2] > 0, "Last time should be positive"
-        print(f"✓ Total trajectory time: {trajectory[-1][2]:.2f} seconds")
+        print(f"Success: Total trajectory time: {trajectory[-1][2]:.2f} seconds")
         
         # Check time is monotonically increasing
         times = [t for _, _, t in trajectory]
         assert all(times[i] <= times[i+1] for i in range(len(times)-1)), "Time should increase"
-        print("✓ Time stamps are monotonically increasing")
+        print("Success: Time stamps are monotonically increasing")
         
     except Exception as e:
-        print(f"✗ Failed: {e}")
+        print(f"Failed: {e}")
         return False
     
     # Test 2: Different velocity
@@ -101,22 +101,22 @@ def test_trajectory_generator():
         traj_fast = TrajectoryGenerator.generate_trajectory(smooth_path, velocity=1.0)
         
         assert traj_slow[-1][2] > traj_fast[-1][2], "Slower velocity should take more time"
-        print(f"✓ Slow trajectory: {traj_slow[-1][2]:.2f}s")
-        print(f"✓ Fast trajectory: {traj_fast[-1][2]:.2f}s")
+        print(f"Success: Slow trajectory: {traj_slow[-1][2]:.2f}s")
+        print(f"Success: Fast trajectory: {traj_fast[-1][2]:.2f}s")
     except Exception as e:
-        print(f"✗ Failed: {e}")
+        print(f"Failed: {e}")
         return False
     
     # Test 3: Error handling - invalid velocity
     print("\nTest 3: Error handling (invalid velocity)")
     try:
         TrajectoryGenerator.generate_trajectory(smooth_path, velocity=-0.5)
-        print("✗ Should have raised ValueError")
+        print("Failed: Should have raised ValueError")
         return False
     except ValueError:
-        print("✓ Correctly raised ValueError for negative velocity")
+        print("Success: Correctly raised ValueError for negative velocity")
     
-    print("\n✓ All Trajectory Generator tests passed!")
+    print("\nSuccess: All Trajectory Generator tests passed!")
     return True
 
 
@@ -133,9 +133,9 @@ def test_trajectory_tracker():
             max_linear_vel=0.5,
             max_angular_vel=2.0
         )
-        print("✓ Controller initialized successfully")
+        print("Success: Controller initialized successfully")
     except Exception as e:
-        print(f"✗ Failed: {e}")
+        print(f"Failed: {e}")
         return False
     
     # Test 2: Compute control to target ahead
@@ -148,16 +148,16 @@ def test_trajectory_tracker():
             current_x, current_y, current_theta,
             target_x, target_y
         )
-        print(f"✓ Linear velocity: {linear_vel:.3f} m/s")
-        print(f"✓ Angular velocity: {angular_vel:.3f} rad/s")
-        print(f"✓ Distance: {distance:.3f} m")
+        print(f"Success: Linear velocity: {linear_vel:.3f} m/s")
+        print(f"Success: Angular velocity: {angular_vel:.3f} rad/s")
+        print(f"Success: Distance: {distance:.3f} m")
         
         assert linear_vel > 0, "Should move forward"
         assert abs(angular_vel) < 0.1, "Should go straight (low angular velocity)"
         assert abs(distance - 1.0) < 0.01, "Distance should be 1.0m"
-        print("✓ Control values are reasonable")
+        print("Success: Control values are reasonable")
     except Exception as e:
-        print(f"✗ Failed: {e}")
+        print(f"Failed: {e}")
         return False
     
     # Test 3: Compute control to target on the side
@@ -170,11 +170,11 @@ def test_trajectory_tracker():
             current_x, current_y, current_theta,
             target_x, target_y
         )
-        print(f"✓ Angular velocity: {angular_vel:.3f} rad/s")
+        print(f"Success: Angular velocity: {angular_vel:.3f} rad/s")
         assert angular_vel > 0, "Should turn left (positive angular velocity)"
-        print("✓ Correctly turning left")
+        print("Success: Correctly turning left")
     except Exception as e:
-        print(f"✗ Failed: {e}")
+        print(f"Failed: {e}")
         return False
     
     # Test 4: Velocity limits
@@ -188,10 +188,10 @@ def test_trajectory_tracker():
     
     assert linear_vel <= 0.1, "Linear velocity should respect limit"
     assert abs(angular_vel) <= 0.5, "Angular velocity should respect limit"
-    print(f"✓ Linear velocity limited to: {linear_vel:.3f} m/s")
-    print(f"✓ Angular velocity limited to: {angular_vel:.3f} rad/s")
+    print(f"Success: Linear velocity limited to: {linear_vel:.3f} m/s")
+    print(f"Success: Angular velocity limited to: {angular_vel:.3f} rad/s")
     
-    print("\n✓ All Trajectory Tracker tests passed!")
+    print("\nSuccess: All Trajectory Tracker tests passed!")
     return True
 
 
@@ -212,14 +212,14 @@ def run_integration_test():
         print("\nStep 1: Smoothing path...")
         smoother = PathSmoother()
         smooth_path = smoother.smooth_path(waypoints, num_points=100)
-        print(f"✓ Smoothed {len(waypoints)} waypoints into {len(smooth_path)} points")
+        print(f"Success: Smoothed {len(waypoints)} waypoints into {len(smooth_path)} points")
         
         # Step 2: Generate trajectory
         print("\nStep 2: Generating trajectory...")
         traj_gen = TrajectoryGenerator()
         trajectory = traj_gen.generate_trajectory(smooth_path, velocity=0.2)
-        print(f"✓ Generated trajectory with {len(trajectory)} points")
-        print(f"✓ Total time: {trajectory[-1][2]:.2f} seconds")
+        print(f"Success: Generated trajectory with {len(trajectory)} points")
+        print(f"Success: Total time: {trajectory[-1][2]:.2f} seconds")
         
         # Step 3: Test controller on first few points
         print("\nStep 3: Testing controller...")
@@ -235,11 +235,11 @@ def run_integration_test():
             )
             print(f"  Point {i}: distance={distance:.3f}m, lin_vel={linear_vel:.3f}, ang_vel={angular_vel:.3f}")
         
-        print("\n✓ Integration test passed!")
+        print("\nSuccess: Integration test passed!")
         return True
         
     except Exception as e:
-        print(f"✗ Integration test failed: {e}")
+        print(f"Failed: Integration test failed: {e}")
         return False
 
 
@@ -263,7 +263,7 @@ def main():
     print("=" * 60)
     
     for name, passed in results:
-        status = "✓ PASSED" if passed else "✗ FAILED"
+        status = "PASSED" if passed else "FAILED"
         print(f"{name:.<40} {status}")
     
     total = len(results)
@@ -272,10 +272,10 @@ def main():
     print(f"\nTotal: {passed}/{total} test suites passed")
     
     if passed == total:
-        print("\n🎉 All tests passed!")
+        print("\nAll tests passed successfully!")
         return 0
     else:
-        print("\n⚠️  Some tests failed")
+        print("\nSome tests failed - please check the output above")
         return 1
 
 
