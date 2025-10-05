@@ -1,0 +1,40 @@
+running egg_info
+creating ../build/trajectory_controller/trajectory_controller.egg-info
+writing ../build/trajectory_controller/trajectory_controller.egg-info/PKG-INFO
+writing dependency_links to ../build/trajectory_controller/trajectory_controller.egg-info/dependency_links.txt
+writing entry points to ../build/trajectory_controller/trajectory_controller.egg-info/entry_points.txt
+writing requirements to ../build/trajectory_controller/trajectory_controller.egg-info/requires.txt
+writing top-level names to ../build/trajectory_controller/trajectory_controller.egg-info/top_level.txt
+writing manifest file '../build/trajectory_controller/trajectory_controller.egg-info/SOURCES.txt'
+reading manifest file '../build/trajectory_controller/trajectory_controller.egg-info/SOURCES.txt'
+writing manifest file '../build/trajectory_controller/trajectory_controller.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/amaan/ros2_ws/src/build/trajectory_controller/build
+creating /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib
+creating /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib/trajectory_controller
+copying trajectory_controller/test_trajectory_controller.py -> /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib/trajectory_controller
+copying trajectory_controller/trajectory_controller.py -> /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib/trajectory_controller
+copying trajectory_controller/__init__.py -> /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib/trajectory_controller
+running install
+running install_lib
+creating /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller
+copying /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib/trajectory_controller/test_trajectory_controller.py -> /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller
+copying /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib/trajectory_controller/trajectory_controller.py -> /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller
+copying /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib/trajectory_controller/__init__.py -> /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller
+byte-compiling /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller/test_trajectory_controller.py to test_trajectory_controller.cpython-310.pyc
+byte-compiling /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller/trajectory_controller.py to trajectory_controller.cpython-310.pyc
+byte-compiling /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/amaan/ros2_ws/src/install/trajectory_controller/share/ament_index
+creating /home/amaan/ros2_ws/src/install/trajectory_controller/share/ament_index/resource_index
+creating /home/amaan/ros2_ws/src/install/trajectory_controller/share/ament_index/resource_index/packages
+copying resource/trajectory_controller -> /home/amaan/ros2_ws/src/install/trajectory_controller/share/ament_index/resource_index/packages
+copying package.xml -> /home/amaan/ros2_ws/src/install/trajectory_controller/share/trajectory_controller
+creating /home/amaan/ros2_ws/src/install/trajectory_controller/share/trajectory_controller/launch
+copying launch/trajectory_sim.launch.py -> /home/amaan/ros2_ws/src/install/trajectory_controller/share/trajectory_controller/launch
+running install_egg_info
+Copying ../build/trajectory_controller/trajectory_controller.egg-info to /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller-1.0.0-py3.10.egg-info
+running install_scripts
+Installing trajectory_controller script to /home/amaan/ros2_ws/src/install/trajectory_controller/lib/trajectory_controller
+writing list of installed files to '/home/amaan/ros2_ws/src/build/trajectory_controller/install.log'

@@ -1,0 +1,42 @@
+[0.737s] Invoking command in '/home/amaan/ros2_ws/src/trajectory_controller': PYTHONPATH=/home/amaan/ros2_ws/src/build/trajectory_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/trajectory_controller build --build-base /home/amaan/ros2_ws/src/build/trajectory_controller/build install --record /home/amaan/ros2_ws/src/build/trajectory_controller/install.log --single-version-externally-managed install_data
+[0.969s] running egg_info
+[0.969s] creating ../build/trajectory_controller/trajectory_controller.egg-info
+[0.971s] writing ../build/trajectory_controller/trajectory_controller.egg-info/PKG-INFO
+[0.972s] writing dependency_links to ../build/trajectory_controller/trajectory_controller.egg-info/dependency_links.txt
+[0.972s] writing entry points to ../build/trajectory_controller/trajectory_controller.egg-info/entry_points.txt
+[0.972s] writing requirements to ../build/trajectory_controller/trajectory_controller.egg-info/requires.txt
+[0.973s] writing top-level names to ../build/trajectory_controller/trajectory_controller.egg-info/top_level.txt
+[0.973s] writing manifest file '../build/trajectory_controller/trajectory_controller.egg-info/SOURCES.txt'
+[0.975s] reading manifest file '../build/trajectory_controller/trajectory_controller.egg-info/SOURCES.txt'
+[0.976s] writing manifest file '../build/trajectory_controller/trajectory_controller.egg-info/SOURCES.txt'
+[0.976s] running build
+[0.977s] running build_py
+[0.977s] creating /home/amaan/ros2_ws/src/build/trajectory_controller/build
+[0.978s] creating /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib
+[0.979s] creating /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib/trajectory_controller
+[0.979s] copying trajectory_controller/test_trajectory_controller.py -> /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib/trajectory_controller
+[0.980s] copying trajectory_controller/trajectory_controller.py -> /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib/trajectory_controller
+[0.980s] copying trajectory_controller/__init__.py -> /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib/trajectory_controller
+[0.980s] running install
+[0.981s] running install_lib
+[0.982s] creating /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller
+[0.983s] copying /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib/trajectory_controller/test_trajectory_controller.py -> /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller
+[0.983s] copying /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib/trajectory_controller/trajectory_controller.py -> /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller
+[0.984s] copying /home/amaan/ros2_ws/src/build/trajectory_controller/build/lib/trajectory_controller/__init__.py -> /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller
+[0.984s] byte-compiling /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller/test_trajectory_controller.py to test_trajectory_controller.cpython-310.pyc
+[0.987s] byte-compiling /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller/trajectory_controller.py to trajectory_controller.cpython-310.pyc
+[0.990s] byte-compiling /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller/__init__.py to __init__.cpython-310.pyc
+[0.990s] running install_data
+[0.990s] creating /home/amaan/ros2_ws/src/install/trajectory_controller/share/ament_index
+[0.991s] creating /home/amaan/ros2_ws/src/install/trajectory_controller/share/ament_index/resource_index
+[0.991s] creating /home/amaan/ros2_ws/src/install/trajectory_controller/share/ament_index/resource_index/packages
+[0.992s] copying resource/trajectory_controller -> /home/amaan/ros2_ws/src/install/trajectory_controller/share/ament_index/resource_index/packages
+[0.992s] copying package.xml -> /home/amaan/ros2_ws/src/install/trajectory_controller/share/trajectory_controller
+[0.993s] creating /home/amaan/ros2_ws/src/install/trajectory_controller/share/trajectory_controller/launch
+[0.993s] copying launch/trajectory_sim.launch.py -> /home/amaan/ros2_ws/src/install/trajectory_controller/share/trajectory_controller/launch
+[0.994s] running install_egg_info
+[0.997s] Copying ../build/trajectory_controller/trajectory_controller.egg-info to /home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages/trajectory_controller-1.0.0-py3.10.egg-info
+[1.000s] running install_scripts
+[1.020s] Installing trajectory_controller script to /home/amaan/ros2_ws/src/install/trajectory_controller/lib/trajectory_controller
+[1.021s] writing list of installed files to '/home/amaan/ros2_ws/src/build/trajectory_controller/install.log'
+[1.058s] Invoked command in '/home/amaan/ros2_ws/src/trajectory_controller' returned '0': PYTHONPATH=/home/amaan/ros2_ws/src/build/trajectory_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/amaan/ros2_ws/src/install/trajectory_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/trajectory_controller build --build-base /home/amaan/ros2_ws/src/build/trajectory_controller/build install --record /home/amaan/ros2_ws/src/build/trajectory_controller/install.log --single-version-externally-managed install_data
